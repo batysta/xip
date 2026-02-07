@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagar com Pix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f5f6fa;
+      padding: 40px;
+    }
+    .box {
+      background: #fff;
+      max-width: 420px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+    }
+    button {
+      background: #00bfa5;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    textarea {
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>💚 Pagar com Pix</h2>
+
+  <!-- QR Code -->
+  <img src="qrcode-pix.png" alt="QR Code Pix" width="220">
+
+  <!-- Copia e Cola -->
+  <textarea id="pix" rows="4" readonly>
+00020126360014BR.GOV.BCB.PIX0114SUA_CHAVE_PIX_AQUI5204000053039865802BR5920SEU_NOME_AQUI6009SAO PAULO62070503***6304ABCD
+  </textarea>
+
+  <br><br>
+  <button onclick="copiar()">📋 Copiar Pix</button>
+</div>
+
+<script>
+function copiar() {
+  const pix = document.getElementById("pix");
+  pix.select();
+  document.execCommand("copy");
+  alert("Pix copiado! Agora é só colar no app do banco 😉");
+}
+</script>
+
+</body>
+</html>
